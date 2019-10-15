@@ -95,10 +95,39 @@ ticketPriceTotal = runners.reduce((accumulator, currentItem) => {
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
+// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could
+// solve given the data set and the 5k fun run theme.
+//  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//We need -email added to all emails so we know its an email
+
+let emailsClarified = [];
+
+emailsClarified = runners.map((currentItem) => {
+  return currentItem.first_name + '-email'
+})
+
+console.log(emailsClarified);
 
 // Problem 2
+// We need a list off all obese runners so our doctors know who to keep an eye on!
+
+let runnersObese = [];
+
+runnersObese = runners.filter((currentItem) => {
+  return currentItem.shirt_size === '2XL' || currentItem.shirt_size === '3XL'
+})
+
+console.log(runnersObese);
 
 // Problem 3
+// The Divanoodle people ordered some beer for when they cross the finish line, we will need an array with alll people that work for them
+
+let divaNoodleWorkers = [];
+
+divaNoodleWorkers = runners.filter((currentItem) => {
+  return currentItem.company_name === 'Divanoodle'
+})
+
+console.log(divaNoodleWorkers);
