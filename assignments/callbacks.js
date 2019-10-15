@@ -92,6 +92,7 @@ console.log(testWork1(items, 'Pencil', contains))
 /* STRETCH PROBLEM */
 
 
+let withoutDuplicates = []
 
  function removeDuplicates(array, cb) {
    // removeDuplicates removes all duplicate values from the given array.
@@ -99,10 +100,23 @@ console.log(testWork1(items, 'Pencil', contains))
   // Do not mutate the original array.
    for(i = 0; i < array.length; i++) {
      if (!(withoutDuplicates.includes(array[i])))    {
-       return withoutDuplicates.push(array[i])
+      withoutDuplicates.push(array[i])
     }
    }
  }
 
- console.log(testWork2(items, removeDuplicates))
+testWork2(items, removeDuplicates)
 
+console.log(withoutDuplicates);
+
+
+//  function testWork2(a, cb) {
+//   return cb(a)
+// }
+
+
+function newColor(oasjdoiasjdioasjdoiasjiodsaopi, csjaoijiosadjifsdfjosdifoids ) {
+  return oasjdoiasjdioasjdoiasjiodsaopi + csjaoijiosadjifsdfjosdifoids
+}
+
+newColor('red', 'blue')
