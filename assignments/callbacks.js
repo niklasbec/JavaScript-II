@@ -1,6 +1,20 @@
-// Create a higher order function and invoke the callback function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
+// Create a higher order function and invoke the callback function to test your work.
+// You have been provided an example of a problem and a solution to see how this works with 
+// our items array.  Study both the problem and the solution to figure out the rest of the problems.
+const cb = (first) => {
+  console.log(first)
+}
 
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'Notebook', 'yo-yo', 'Gum'];
+
+function testWork1(a, b, cb) {
+  return cb(a, b)
+}
+
+function testWork2(a, cb) {
+  return cb(a)
+}
 
 /* 
 
@@ -40,30 +54,72 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
+  return arr.length
 }
+
+arrayNew = ['dsa','wqe','gsdf']
+
+console.log(testWork2(items, getLength));
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return arr[(arr.length - 1)]
 }
 
+console.log(testWork2(items, last))
+
 function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return x + y
 }
+
+console.log(testWork1(12, 18, sumNums))
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return x * y
 }
 
-function contains(item, list, cb) {
+console.log(testWork1(12, 18, multiplyNums))
+
+function contains(list, item, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  return list.includes(item)
 }
+
+console.log(testWork1(items, 'Pencil', contains))
 
 /* STRETCH PROBLEM */
 
+
+
+// function removeDuplicates(array, cb) {
+//   // removeDuplicates removes all duplicate values from the given array.
+//   // Pass the duplicate free array to the callback function.
+//   // Do not mutate the original array.
+//   for(i = 0; i < array.length; i++) {
+//     if (!(withoutDuplicates.includes(array[i])))    {
+//       return withoutDuplicates.push(array[i])
+//     }
+//   }
+// }
+
+// console.log(testWork2(items, removeDuplicates))
+
+
+
+// const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'Notebook', 'yo-yo', 'Gum'];
+
+// function testWork2(a, cb) {
+//   return cb(a)
+// }
+
 function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
+  cb(array.filter((item, index) => {
+    return array.indexOf(item) >= index;
+  }))
 }
+removeDuplicates(items, cb);
+
+
+console.log(testWork2(items, removeDuplicates));
