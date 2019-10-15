@@ -93,33 +93,16 @@ console.log(testWork1(items, 'Pencil', contains))
 
 
 
-// function removeDuplicates(array, cb) {
-//   // removeDuplicates removes all duplicate values from the given array.
-//   // Pass the duplicate free array to the callback function.
-//   // Do not mutate the original array.
-//   for(i = 0; i < array.length; i++) {
-//     if (!(withoutDuplicates.includes(array[i])))    {
-//       return withoutDuplicates.push(array[i])
-//     }
-//   }
-// }
+ function removeDuplicates(array, cb) {
+   // removeDuplicates removes all duplicate values from the given array.
+   // Pass the duplicate free array to the callback function.
+  // Do not mutate the original array.
+   for(i = 0; i < array.length; i++) {
+     if (!(withoutDuplicates.includes(array[i])))    {
+       return withoutDuplicates.push(array[i])
+    }
+   }
+ }
 
-// console.log(testWork2(items, removeDuplicates))
+ console.log(testWork2(items, removeDuplicates))
 
-
-
-// const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'Notebook', 'yo-yo', 'Gum'];
-
-// function testWork2(a, cb) {
-//   return cb(a)
-// }
-
-function removeDuplicates(array, cb) {
-  cb(array.filter((item, index) => {
-    return array.indexOf(item) >= index;
-  }))
-}
-removeDuplicates(items, cb);
-
-
-console.log(testWork2(items, removeDuplicates));
